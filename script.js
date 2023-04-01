@@ -85,7 +85,7 @@ function refreshUI() {
         doneButton.addEventListener("click", () => {
             taskList.splice(index, 1);
             totalTask -= 1;
-            completedTask += parseInt(1);
+            completedTask += 1;
 
             updateStorage();
             refreshUI();
