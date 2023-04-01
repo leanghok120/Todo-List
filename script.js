@@ -14,7 +14,7 @@ class Task {
 
 const totalTaskStorage = localStorage.getItem("totalTask");
 if (totalTaskStorage !== null) {
-    totalTask = totalTaskStorage;
+    totalTask = parseInt(totalTaskStorage);
 }
 
 const taskListStorage = localStorage.getItem("tasks");
@@ -26,7 +26,7 @@ if (taskListStorage !== null) {
 
 const completedTaskStorage = localStorage.getItem("completedTask");
 if (completedTaskStorage !== null) {
-    completedTask = completedTaskStorage;
+    completedTask = parseInt(completedTaskStorage);
 }
 
 refreshUI();
@@ -76,7 +76,7 @@ function refreshUI() {
             updateStorage();
             refreshUI();
         });
-        // Done task button
+        // Remove task button
         const doneButton = document.createElement("button");
         doneButton.classList.add("btn", "btn-success");
         doneButton.innerText = "Done";
